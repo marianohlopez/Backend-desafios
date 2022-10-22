@@ -1,14 +1,14 @@
 class Usuario {
 
-    constructor(nombre, apellido) {
+    constructor(nombre, apellido, libros, mascotas) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.libros = [];
-        this.mascotas = [];
+        this.libros = libros;
+        this.mascotas = mascotas;
     }   
 
     getFullName() {
-        console.log(`El nombre del usuario es ${this.nombre} ${this.apellido}`);
+        return `El nombre del usuario es ${this.nombre} ${this.apellido}`;
     }
 
     addMascota(mascota) {
@@ -16,29 +16,28 @@ class Usuario {
     }
 
     countMascotas() {
-        console.log(this.mascotas.length);
+        return this.mascotas.length;
     }
 
     addBook(nombre, autor) {
-        this.libros.push({nombre: nombre, autor: autor});
+        this.libros.push({nombre, autor});
     }
 
     getBookNames() {
-        console.log(this.libros.map((libro) => libro.nombre)); 
+        return this.libros.map(libro => libro.nombre); 
     }
 }
 
-const usuario1 = new Usuario('franco', 'lopez');
+const usuario1 = new Usuario('franco', 'lopez', [], []);
 
-usuario1.getFullName();
+console.log(usuario1.getFullName());
 
 usuario1.addMascota('hamster');
 usuario1.addMascota('perro');
 
-usuario1.countMascotas();
+console.log(usuario1.countMascotas());
 
 usuario1.addBook('El señor de los anillos', 'Carlos');
 usuario1.addBook('Harry Potter', 'Alberto');
 
-
-usuario1.getBookNames();
+console.log(usuario1.getBookNames());
