@@ -18,6 +18,10 @@ const getRandom = async () => {
 
 //RUTAS
 
+app.get('/', (req, res) => {
+    res.send("<h1>Desafio Nº 3</h>")
+})
+
 app.get('/productos', async (req, res) => {
     res.send(await contenedor.getAll())
 })
