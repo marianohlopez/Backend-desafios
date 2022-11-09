@@ -43,6 +43,7 @@ class Contenedor {
     //OBTENEMOS PRODUCTO BUSCADO MEDIANTE EL ID
 
     async getById(id) {
+
         try {
             const response = await this.getAll()
             return response.find(item => item.id === id) ?? null
