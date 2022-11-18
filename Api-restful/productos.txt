@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Escuadra",
+    "price": 123.45,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "id": 1
+  },
+  {
+    "title": "Calculadora",
+    "price": 234.56,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+    "id": 2
+  },
+  {
+    "title": "Computadora",
+    "price": 345.67,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+    "id": 3
+  },
+  {
+    "title": "Teclado",
+    "price": 900,
+    "thumbnail": "https://www.google.com.ar/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FTeclado_%2528inform%25C3%25A1tica%2529&psig=AOvVaw2N3TB4rnhPwfQMlirDXsCm&ust=1668881394566000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDdoeepuPsCFQAAAAAdAAAAABAJ",
+    "id": 4
+  },
+  {
+    "title": "Regla",
+    "price": 345.67,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+    "id": 5
+  }
+]
