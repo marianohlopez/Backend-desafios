@@ -1,0 +1,11 @@
+<h1>Tienda de productos</h1>
+<a href="http://localhost:3000">ir formulario de carga</a>
+<% if(items.length) { %>
+<% items.forEach(product => {%>
+<h2>title: <%= product.title %></h2>
+<img src="<%= product.thumbnail %>" alt="" width="100">
+<p>price: <%= product.price %></p>
+<% }) %>
+<% } else { %>
+<h1>No hay productos</h1>
+<% } %>
