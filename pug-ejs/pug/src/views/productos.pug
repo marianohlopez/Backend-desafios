@@ -1,0 +1,17 @@
+extends main.pug
+
+block productos
+    h1=title 
+    a(href="http://localhost:3000")=url
+    if items.length
+        each producto in items 
+            h2=producto.title 
+            img(src=producto.thumbnail width="100")
+            p=producto.price
+    else 
+        h1 No hay productos 
+
+
+
+
+
