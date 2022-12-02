@@ -5,10 +5,6 @@ const app = express();
 
 const PORT = 8080
 
-const server = app.listen(PORT, () => {
-    console.log(`Servidor prendido escuchando el puerto: ${PORT}`)
-})
-
 const contenedor = new Contenedor('./productos.txt')
 
 const getRandom = async () => {
@@ -30,7 +26,11 @@ app.get('/productoRandom', async (req, res) => {
     res.send(await getRandom())
 })
 
-server.on('error', (err) => {console.log(`====> ERROR: ${err}`)})
+const server = app.listen(PORT, () => {
+    console.log(`Servidor prendido escuchando el puerto: ${PORT}`)
+})
+
+server.on('error', (err) => { console.log(`====> ERROR: ${err}`) })
 
 
 
