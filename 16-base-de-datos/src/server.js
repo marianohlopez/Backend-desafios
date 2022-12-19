@@ -5,8 +5,9 @@ import { engine } from "express-handlebars";
 import router from "./routes/index.js";
 import { Server as IOServer } from 'socket.io';
 import moment from 'moment'
-import Contenedor from './api.js';
-import fs from 'fs';
+import Contenedor from './crud/Contenedor.js';
+import sqliteConfig from './db/sqlite.js';
+import config from './db/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -33,33 +34,27 @@ const expressServer = app.listen('3000', () => {
 
 const io = new IOServer(expressServer);
 
-const api = new Contenedor('./src/productos.txt')
+const productApi = new Contenedor(config, "products")
+const messageApi = new Contenedor(sqliteConfig, "chat")
 
-const messages = [];
-
-const save = async (message) => {
-    await fs.promises.writeFile('./src/chat.txt', JSON.stringify(message, null, 2))
-}
+const time = moment().format('DD MM YYYY hh:mm:ss');
 
 app.use(express.static(__dirname + "/views/layouts"));
 
-const time = moment().format('DD MM YYYY hh:mm:ss')
 io.on("connection", async (socket) => {
     console.log(`New connection, socket ID: ${socket.id}`);
 
-    socket.emit("server:message", messages);
+    socket.emit("server:message", await messageApi.getAll());
 
-    socket.emit("server:product", await api.getAll());
+    socket.emit("server:product", await productApi.getAll());
 
     socket.on("client:message", async (messageInfo) => {
-        messages.push({ ...messageInfo, time });
-        await save(messages)
-        io.emit("server:message", messages);
+        await messageApi.save({ ...messageInfo, time });
+        io.emit("server:message", await messageApi.getAll());
     });
-
     socket.on("client:product", async (product) => {
-        await api.save(product.title, product.price, product.thumbnail)
-        io.emit("server:product", await api.getAll());
+        await productApi.save(product)
+        io.emit("server:product", await productApi.getAll());
     })
 });
 

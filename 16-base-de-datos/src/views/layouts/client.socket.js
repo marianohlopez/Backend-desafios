@@ -33,7 +33,7 @@ const formProductsHandler = (event) => {
         price: priceInput.value,
     };
     sendProduct(productInfo);
-
+    productForm.reset()
 }
 
 productForm.addEventListener("submit", formProductsHandler);
