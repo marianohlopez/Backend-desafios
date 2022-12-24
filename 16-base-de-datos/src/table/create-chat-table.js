@@ -5,7 +5,7 @@ const sqliteDatabase = knex(sqliteConfig);
 
 const createProductsTable = async () => {
     try {
-        await sqliteDatabase.schema.dropTable("chat")
+        await sqliteDatabase.schema.dropTableIfExists("chat")
         await sqliteDatabase.schema.createTable("chat", (chatTable) => {
             chatTable.string("username", 50).notNullable();
             chatTable.string("message", 100).notNullable();
