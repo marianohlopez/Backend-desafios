@@ -95,7 +95,7 @@ db.productos.find({ price: { $gt: 3000 } })
 
 // Realizar una consulta que traiga sólo el nombre del tercer producto más barato.
 
-db.productos.find().skip(2).limit(1).sort({ price: 1 })
+db.productos.find({}, { title: 1, _id: 0 }).skip(2).limit(1).sort({ price: 1 })
 
 // Hacer una actualización sobre todos los productos, agregando el campo stock a todos ellos con un valor de 100.
 
