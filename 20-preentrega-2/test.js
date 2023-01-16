@@ -6,10 +6,10 @@ import firebaseConfig from "./firebase.js";
 const prod = new ContenedorProd(model)
 
 const product = {
-    title: "Teclado",
-    price: 900,
+    title: "Mouse",
+    price: 400,
     thumbnail: "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
-    id: 5
+    id: 7
 }
 
 const set = {
@@ -67,4 +67,4 @@ const cart = new ContenedorCart(firebaseConfig);
 //cart.create(cartExample)
 //cart.read()
 //cart.update("b79G3xEDXWZ25XFC1wrc", setCart)
-cart.delete("b79G3xEDXWZ25XFC1wrc")
+//cart.delete("b79G3xEDXWZ25XFC1wrc")

@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+dotenv.config();
 
 class ContenedorProd {
     constructor(model) {
@@ -7,7 +9,7 @@ class ContenedorProd {
 
     async connect() {
         try {
-            mongoose.connect("mongodb+srv://admin:coder123@coderhouse.v7rnyqk.mongodb.net/test");
+            mongoose.connect(process.env.MONGOOSE_URL_KEY);
             console.log("Base de datos conectada");
         } catch (err) {
             console.log(err);
