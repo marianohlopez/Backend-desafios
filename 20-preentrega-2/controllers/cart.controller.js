@@ -28,7 +28,7 @@ const updateCart = async (req, res) => {
     try {
         const { id } = req.params;
         const { timestamp, products } = req.body;
-        await Cart.update({ timestamp, products }, id);
+        await Cart.update(Number(id), { timestamp, products });
         return "update realizado";
     } catch (err) {
         throw new Error();
@@ -38,7 +38,7 @@ const updateCart = async (req, res) => {
 const deleteCart = async (req, res) => {
     try {
         const { id } = req.params;
-        await Cart.delete(id);
+        await Cart.delete(Number(id));
         return "delete realizado";
     } catch (err) {
         throw new Error();

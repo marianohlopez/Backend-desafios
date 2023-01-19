@@ -26,8 +26,8 @@ const createProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        const { timestamp, products } = req.body;
-        await Product.update({ timestamp, products }, id);
+        const { title, price, thumbnail } = req.body;
+        await Product.update(Number(id), { title, price, thumbnail });
         return "update realizado";
     } catch (err) {
         throw new Error();
@@ -37,7 +37,7 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        await Product.delete(id);
+        await Product.delete(Number(id));
         return "delete realizado";
     } catch (err) {
         throw new Error();
