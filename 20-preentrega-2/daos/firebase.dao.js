@@ -18,12 +18,13 @@ export class FirebaseDao {
         }
     }
 
-    async read() {
+    async getAll() {
         try {
             const querySnapshot = await getDocs(collection(this.db, this.collection));
             querySnapshot.forEach((doc) => {
                 console.log(`${doc.id} => ${doc.data().cartId} ${doc.data().timestamp}`);
             });
+            return querySnapshot;
 
         } catch (err) {
             console.log(err);
