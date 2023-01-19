@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc, getDocs, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, addDoc, getDocs, updateDoc, deleteDoc } from "firebase/firestore";
+import { firebaseConfig } from "../db/db.js"
 
-class ContenedorCart {
-    constructor(fireDbConfig) {
-        this.dbConfig = fireDbConfig;
+export class FirebaseDao {
+    constructor(collection) {
+        this.collection = collection;
+        this.dbConfig = firebaseConfig;
         this.db = getFirestore(initializeApp(this.dbConfig));
     }
 
-    async create(arrayCarts) {
+    async create(docToAdd) {
         try {
-            for (const cartToAdd of arrayCarts) { await addDoc(collection(this.db, "carts"), cartToAdd) }
+            await addDoc(collection(this.db, this.collection), docToAdd)
             console.log('Data inserted.');
         } catch (err) {
             console.log(err);
@@ -18,7 +20,7 @@ class ContenedorCart {
 
     async read() {
         try {
-            const querySnapshot = await getDocs(collection(this.db, "carts"));
+            const querySnapshot = await getDocs(collection(this.db, this.collection));
             querySnapshot.forEach((doc) => {
                 console.log(`${doc.id} => ${doc.data().cartId} ${doc.data().timestamp}`);
             });
@@ -30,8 +32,8 @@ class ContenedorCart {
 
     async update(productId, set) {
         try {
-            const cartUpdateRef = doc(this.db, `carts/${productId}`);
-            await updateDoc(cartUpdateRef, set);
+            const docUpdateRef = doc(this.db, `${this.collection}/${productId}`);
+            await updateDoc(docUpdateRef, set);
             console.log("Updated doc!");
         } catch (err) {
             console.log(err);
@@ -40,7 +42,7 @@ class ContenedorCart {
 
     async delete(idDelete) {
         try {
-            const cartsRef = doc(this.db, `carts/${idDelete}`);
+            const cartsRef = doc(this.db, `${this.collection}/${idDelete}`);
             await deleteDoc(cartsRef);
             console.log(`delete doc!, ID: ${idDelete}`);
         } catch (err) {
@@ -48,5 +50,3 @@ class ContenedorCart {
         }
     }
 }
-
-export default ContenedorCart;
