@@ -21,11 +21,11 @@ export class FirebaseDao {
     async getAll() {
         try {
             const querySnapshot = await getDocs(collection(this.db, this.collection));
-            return querySnapshot.forEach((doc) => {
-                doc.id;
+            const newArray = [];
+            querySnapshot.forEach((doc) => {
+                newArray.push({ ...doc.data(), id: doc.id })
             });
-            //return querySnapshot.docs.data;
-
+            return newArray;
         } catch (err) {
             console.log(err);
         }

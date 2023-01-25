@@ -1,7 +1,7 @@
 import { Daos } from "../daos/index.js";
 import { carts } from "../models/carts.js";
 
-const Cart = new Daos.CartDao(carts);
+const Cart = new Daos.CartDao();
 
 const getAllCarts = async (req, res) => {
     try {
@@ -28,8 +28,9 @@ const updateCart = async (req, res) => {
     try {
         const { id } = req.params;
         const { timestamp, products } = req.body;
-        await Cart.update(Number(id), { timestamp, products });
-        return "update realizado";
+
+        await Cart.update(id, { timestamp, products });
+        res.send("update realizado");
     } catch (err) {
         throw new Error();
     }
@@ -38,8 +39,8 @@ const updateCart = async (req, res) => {
 const deleteCart = async (req, res) => {
     try {
         const { id } = req.params;
-        await Cart.delete(Number(id));
-        return "delete realizado";
+        await Cart.delete(id);
+        res.send("delete realizado");
     } catch (err) {
         throw new Error();
     }

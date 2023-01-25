@@ -33,7 +33,7 @@ export class MongoDao {
         }
     }
 
-    async update(resource, id) {
+    async update(id, resource) {
         try {
             const response = await this.model.findByIdAndUpdate(id, resource);
 

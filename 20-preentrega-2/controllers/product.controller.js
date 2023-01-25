@@ -1,7 +1,7 @@
 import { Daos } from "../daos/index.js";
 import { products } from "../models/products.js";
 
-const Product = new Daos.ProductDao(products);
+const Product = new Daos.ProductDao();
 
 const getAllProducts = async (req, res) => {
     try {
@@ -27,8 +27,8 @@ const updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, price, thumbnail } = req.body;
-        await Product.update(Number(id), { title, price, thumbnail });
-        return "update realizado";
+        await Product.update(id, { title, price, thumbnail });
+        res.send("update realizado");
     } catch (err) {
         throw new Error();
     }
@@ -37,8 +37,8 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        await Product.delete(Number(id));
-        return "delete realizado";
+        await Product.delete(id);
+        res.send("delete realizado");
     } catch (err) {
         throw new Error();
     }
