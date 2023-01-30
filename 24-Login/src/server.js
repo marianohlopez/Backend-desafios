@@ -10,6 +10,9 @@ import moment from 'moment'
 import Contenedor from './crud/Contenedor.js';
 import sqliteConfig from './db/sqlite.js';
 import config from './db/index.js';
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -41,7 +44,7 @@ app.use(
         saveUninitialized: false,
         store: new MongoStore({
             mongoUrl:
-                "mongodb+srv://admin:adminCoder@coderhouse.v7rnyqk.mongodb.net/?retryWrites=true&w=majority",
+                process.env.MONGO_ATLAS_URL,
             mongoOptions,
             ttl: 600,
         }),
