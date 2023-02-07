@@ -5,15 +5,6 @@ const __dirname = dirname(__filename);
 
 const getLogin = (req, res) => {
 
-    /* const { username, firstname, lastname, email } = req.body;
-
-    return res.render("login-ok", {
-        usuario: username,
-        nombre: firstname,
-        apellido: lastname,
-        email: email,
-    }); */
-
     if (req.isAuthenticated()) {
         const user = req.user;
         console.log(user);
@@ -52,7 +43,9 @@ const getRegisterFailiure = (req, res) => {
 };
 
 const logOut = (req, res) => {
-    res.render("login");
+    req.logout(() => {
+        return res.redirect("/login");
+    });
 };
 
 export const authController = {

@@ -41,6 +41,9 @@ app.use(
         rolling: true,
         resave: false,
         saveUninitialized: false,
+        cookie: {
+            maxAge: 600000,
+        },
     })
 );
 
@@ -54,8 +57,9 @@ passport.serializeUser((user, done) => {
     done(null, user);
 });
 
-passport.deserializeUser((id, done) => {
-    User.findById(id);
+passport.deserializeUser(async (id, done) => {
+    const data = await User.findById(id);
+    done(null, data)
 });
 
 app.use('/', router)
