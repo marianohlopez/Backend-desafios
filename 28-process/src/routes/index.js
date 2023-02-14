@@ -36,4 +36,8 @@ router.route('/api/productos-test').get((req, res) => {
     res.render('test', { items: generateFaker() })
 })
 
+router.get("/info", authController.info)
+
+router.get("/api/randoms", authController.getRandom)
+
 export default router;
