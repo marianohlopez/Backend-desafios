@@ -87,22 +87,12 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
     });
 
     app.use((req, res, next) => {
-        if (!req.route) {
-            logger.warn({
-                method: req.method,
-                url: req.url
-            });
-        }
-        next();
-    });
-
-    /* app.use((req, res, next) => {
         logger.info({
             method: req.method,
             url: req.url
         });
         next();
-    }); */
+    });
 
 
     app.use('/', router)
@@ -140,7 +130,7 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
         })
     });
 
-    /* app.use(invalidUrl); */
+    app.use(invalidUrl);
 
     app.on('error', (err) => {
         console.log(err);
