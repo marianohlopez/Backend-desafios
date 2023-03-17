@@ -43,16 +43,26 @@ router.get('/login/adminproductos', (req, res) => {
     }
 })
 
-router.get('/login/productos', (req, res) => {
-    try {
-        const { user } = req.session.passport;
-        if (!user) { return res.redirect('/login') }
-        res.render('cart', { user })
-    }
-    catch (err) {
-        logger.error(err)
-    }
-})
+router.route('/login/productos')
+    .get((req, res) => {
+        try {
+            const { user } = req.session.passport;
+            if (!user) { return res.redirect('/login') }
+            res.render('cart', { user })
+        }
+        catch (err) {
+            logger.error(err)
+        }
+    })
+    .post((req, res) => {
+        try {
+            const { productTitle } = req.body;
+            console.log(productTitle);
+        }
+        catch (err) {
+            logger.error(err)
+        }
+    })
 
 router.route('/api/productos-test').get((req, res) => {
     try {
