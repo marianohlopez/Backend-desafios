@@ -1,0 +1,20 @@
+<form action="/logout" method="get">
+<h1 style="display: inline-block;">Bienvenido {{user.username}}</h1> <button style="display: inline-block;" type="submit">Logout</button>
+<h3>Nombre: {{user.firstname}}</h3>
+<h3>Apellido: {{user.lastname}}</h3>
+<h3>Email: {{user.email}}</h3>
+<h3>Tel: {{user.phone}}</h3>
+<h3>Dirección: {{user.address}}</h3>
+<h3>Edad: {{user.age}}</h3>
+<img style="width: 100px" src="/{{user.photo}}" alt="Imagen subida">
+</form>
+
+<h2>Mi carrito</h2>
+<form id="productSaleForm">
+    <input id="productSaleInput" type="text" name="title" placeholder="¿Que producto necesitas?">
+    <input type="submit">
+</form>
+<div id="cartContainer"></div>
+
+<div id="productsContainer"></div>
+
