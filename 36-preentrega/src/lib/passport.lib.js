@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import LocalStrategy from "passport-local";
 import { User } from "../table/user.model.js";
+import { Carts } from "../table/car.model.js";
 
 const hashPasword = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -46,6 +47,8 @@ const registerStrategy = new LocalStrategy(
                 photo: req.file.filename
             };
             const createdUser = await User.create(newUser);
+
+            await Carts.create({ username, products: [] });
 
             req.user = createdUser;
 

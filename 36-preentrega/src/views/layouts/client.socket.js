@@ -20,7 +20,10 @@ const renderProduct = (productData) => {
         return `
             <h2>${productInfo.title}</h2>
             <img src="${productInfo.thumbnail}" alt="" width="100">
-            <p>${productInfo.price}</p>`
+            <p>${productInfo.price}</p>
+            <form action="/cart/${productInfo._id} method="PUT">
+                <input type="submit">Agregar al carrito</input>
+            </form>`
     });
     productsContainer.innerHTML = html;
 };

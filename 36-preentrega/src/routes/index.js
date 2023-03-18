@@ -5,7 +5,9 @@ import compression from 'compression';
 import generateFaker from '../faker.js';
 import logger from '../lib/logger.js';
 import upload from '../lib/multer.js';
-import sendMail from '../nodemail.js';
+import { Carts } from "../table/car.model.js";
+import { Product } from "../table/product.model.js";
+import sendMessage from '../twilio.js';
 
 const router = Router()
 
@@ -34,7 +36,6 @@ router.get("/logout", authController.logOut);
 router.get('/login/adminproductos', (req, res) => {
     try {
         const { user } = req.session.passport;
-        console.log(user.photo);
         if (!user) { return res.redirect('/login') }
         res.render('form', { user })
     }
@@ -44,25 +45,40 @@ router.get('/login/adminproductos', (req, res) => {
 })
 
 router.route('/login/productos')
-    .get((req, res) => {
+    .get(async (req, res) => {
         try {
             const { user } = req.session.passport;
-            if (!user) { return res.redirect('/login') }
-            res.render('cart', { user })
-        }
-        catch (err) {
-            logger.error(err)
-        }
-    })
-    .post((req, res) => {
-        try {
-            const { productTitle } = req.body;
-            console.log(productTitle);
-        }
-        catch (err) {
-            logger.error(err)
+            const userCart = await Carts.findOne({ username: user.username });
+            const products = await Product.find();
+            if (!user) {
+                return res.redirect("/login");
+            }
+            res.render("cart", { cart: userCart, products: products, user });
+        } catch (err) {
+            logger.error(err);
         }
     })
+/* .get((req, res) => {
+    try {
+        const { user } = req.session.passport;
+        if (!user) { return res.redirect('/login') }
+        res.render('cart', { user })
+    }
+    catch (err) {
+        logger.error(err)
+    }
+}) */
+
+
+/* .post((req, res) => {
+    try {
+        const { productTitle } = req.body;
+        console.log(productTitle);
+    }
+    catch (err) {
+        logger.error(err)
+    }
+}) */
 
 router.route('/api/productos-test').get((req, res) => {
     try {
@@ -70,6 +86,41 @@ router.route('/api/productos-test').get((req, res) => {
     }
     catch (err) {
         logger.error(err)
+    }
+})
+
+router.put("/cart/:productId", async (req, res) => {
+    try {
+        const { productId } = req.params;
+        const product = await Product.findById(productId);
+        const cart = await Carts.findOne({
+            username: req.session.passport.user.username,
+        });
+
+        cart.products.push(product);
+
+        await Carts.updateOne(
+            { username: req.session.passport.user.username },
+            cart
+        );
+
+        res.sendStatus(200);
+    } catch (err) {
+        console.log(err);
+        logger.error({ error: err }, "Error adding product");
+
+        res.sendStatus(500);
+    }
+});
+
+router.put("/cart/finish/:cartId", async (req, res) => {
+    try {
+        sendMessage()
+        res.sendStatus(200);
+    } catch (err) {
+        console.log(err);
+        logger.error({ error: err }, "Error adding product");
+        res.sendStatus(500);
     }
 })
 

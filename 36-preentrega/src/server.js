@@ -55,7 +55,7 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
         extname: '.hbs',
         defaultLayout: 'main.html',
         layoutsDir: join(__dirname, '/views/layouts'),
-        partialsDir: join(__dirname, '/views/partials')
+        partialsDir: join(__dirname, '/views/partials'),
     }));
 
     app.set('view engine', 'hbs');
@@ -67,9 +67,9 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
             rolling: true,
             resave: false,
             saveUninitialized: false,
-            cookie: {
+            /* cookie: {
                 maxAge: 600000,
-            },
+            }, */
         })
     );
 
