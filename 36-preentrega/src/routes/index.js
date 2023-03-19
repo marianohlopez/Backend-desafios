@@ -48,37 +48,15 @@ router.route('/login/productos')
     .get(async (req, res) => {
         try {
             const { user } = req.session.passport;
-            const userCart = await Carts.findOne({ username: user.username });
-            const products = await Product.find();
+            const userCart = await Carts.findOne({ username: user.username }).lean();
             if (!user) {
                 return res.redirect("/login");
             }
-            res.render("cart", { cart: userCart, products: products, user });
+            res.render("cart", { cart: userCart, user });
         } catch (err) {
             logger.error(err);
         }
     })
-/* .get((req, res) => {
-    try {
-        const { user } = req.session.passport;
-        if (!user) { return res.redirect('/login') }
-        res.render('cart', { user })
-    }
-    catch (err) {
-        logger.error(err)
-    }
-}) */
-
-
-/* .post((req, res) => {
-    try {
-        const { productTitle } = req.body;
-        console.log(productTitle);
-    }
-    catch (err) {
-        logger.error(err)
-    }
-}) */
 
 router.route('/api/productos-test').get((req, res) => {
     try {
@@ -89,7 +67,7 @@ router.route('/api/productos-test').get((req, res) => {
     }
 })
 
-router.put("/cart/:productId", async (req, res) => {
+router.post("/cart/:productId", async (req, res) => {
     try {
         const { productId } = req.params;
         const product = await Product.findById(productId);
@@ -103,8 +81,7 @@ router.put("/cart/:productId", async (req, res) => {
             { username: req.session.passport.user.username },
             cart
         );
-
-        res.sendStatus(200);
+        res.redirect("/login/productos")
     } catch (err) {
         console.log(err);
         logger.error({ error: err }, "Error adding product");
@@ -113,7 +90,7 @@ router.put("/cart/:productId", async (req, res) => {
     }
 });
 
-router.put("/cart/finish/:cartId", async (req, res) => {
+router.post("/cart/finish/:cartId", async (req, res) => {
     try {
         sendMessage()
         res.sendStatus(200);

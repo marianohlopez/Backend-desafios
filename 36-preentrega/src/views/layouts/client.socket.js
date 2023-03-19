@@ -21,8 +21,8 @@ const renderProduct = (productData) => {
             <h2>${productInfo.title}</h2>
             <img src="${productInfo.thumbnail}" alt="" width="100">
             <p>${productInfo.price}</p>
-            <form action="/cart/${productInfo._id} method="PUT">
-                <input type="submit">Agregar al carrito</input>
+            <form action="/cart/${productInfo._id}" method="POST">
+                <button type="submit" name="add-to-cart">Agregar al carrito</button>
             </form>`
     });
     productsContainer.innerHTML = html;
