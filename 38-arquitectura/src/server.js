@@ -101,7 +101,7 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
     });
 
 
-    app.use('/', router)
+    app.use(router)
 
     await mongoose.connect(process.env.MONGO_URL);
     console.log("Database connected!");
