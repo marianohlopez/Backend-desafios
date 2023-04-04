@@ -18,9 +18,8 @@ import os from 'os';
 import cluster from 'cluster';
 import yargs from 'yargs';
 import logger from './lib/logger.js';
-import ContenedorMongo from './classes/ContenedorMongo.js';
-import { Product } from './models/product.model.js';
 import config from "./config/config.js";
+import ProductDaoFactory from "./daos/productDaoFactory.js";
 
 dotenv.config()
 
@@ -115,7 +114,7 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
 
     const io = new IOServer(expressServer);
 
-    const productApi = new ContenedorMongo(Product)
+    const productApi = ProductDaoFactory.getDao(config.db);
     const messageApi = new Contenedor(sqliteConfig, "chat")
 
     const time = moment().format('DD MM YYYY hh:mm:ss');

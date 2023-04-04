@@ -32,3 +32,53 @@
 {"level":40,"time":1680274543997,"pid":5408,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
 {"level":40,"time":1680274559791,"pid":5408,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
 {"level":40,"time":1680274562459,"pid":5408,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620557111,"pid":1924,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620725821,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620740065,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620750803,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620753445,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680620763839,"pid":2320,"hostname":"DESKTOP-JMIO4M8","error":{},"msg":"Error adding product"}
+{"level":40,"time":1680620763937,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620840855,"pid":2320,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620992155,"pid":4120,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680620997459,"pid":4120,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621000085,"pid":4120,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680621003589,"pid":4120,"hostname":"DESKTOP-JMIO4M8","error":{},"msg":"Error adding product"}
+{"level":40,"time":1680621003671,"pid":4120,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621058638,"pid":6052,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680621060769,"pid":6052,"hostname":"DESKTOP-JMIO4M8","err":{"type":"TypeError","message":"Cannot destructure property 'user' of 'req.session.passport' as it is undefined.","stack":"TypeError: Cannot destructure property 'user' of 'req.session.passport' as it is undefined.\n    at findCartByFilter (file:///G:/Programacion/Programador%20full%20stack%20coderhouse/4-Backend/desafios/desafio-clases/40-persistencia/src/controllers/cart.controller.js:74:17)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:47:12)"},"msg":"Cannot destructure property 'user' of 'req.session.passport' as it is undefined."}
+{"level":40,"time":1680621063086,"pid":6052,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621067714,"pid":6052,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621070400,"pid":6052,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621073149,"pid":6052,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680621511845,"pid":12340,"hostname":"DESKTOP-JMIO4M8","error":{},"msg":"Error adding product"}
+{"level":40,"time":1680621511899,"pid":12340,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680621974395,"pid":13116,"hostname":"DESKTOP-JMIO4M8","err":{"type":"TypeError","message":"Cannot destructure property 'user' of 'req.session.passport' as it is undefined.","stack":"TypeError: Cannot destructure property 'user' of 'req.session.passport' as it is undefined.\n    at findCartByFilter (file:///G:/Programacion/Programador%20full%20stack%20coderhouse/4-Backend/desafios/desafio-clases/40-persistencia/src/controllers/cart.controller.js:74:17)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:47:12)"},"msg":"Cannot destructure property 'user' of 'req.session.passport' as it is undefined."}
+{"level":40,"time":1680621977181,"pid":13116,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/login/favicon.ico"}
+{"level":40,"time":1680621980714,"pid":13116,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621983413,"pid":13116,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680621986026,"pid":13116,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622054190,"pid":7476,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622057298,"pid":7476,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622059993,"pid":7476,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622062585,"pid":7476,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622211012,"pid":3716,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622214538,"pid":3716,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622217206,"pid":3716,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622219415,"pid":3716,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622348758,"pid":404,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622351863,"pid":404,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622354550,"pid":404,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680622356570,"pid":404,"hostname":"DESKTOP-JMIO4M8","error":{},"msg":"Error adding product"}
+{"level":40,"time":1680622356676,"pid":404,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622426306,"pid":404,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622614549,"pid":12040,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622617446,"pid":12040,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622620136,"pid":12040,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":50,"time":1680622622249,"pid":12040,"hostname":"DESKTOP-JMIO4M8","error":{},"msg":"Error adding product"}
+{"level":40,"time":1680622622385,"pid":12040,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622685186,"pid":2144,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622686527,"pid":2144,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622689681,"pid":2144,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622692375,"pid":2144,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
+{"level":40,"time":1680622694948,"pid":2144,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
