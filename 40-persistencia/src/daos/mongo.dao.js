@@ -16,7 +16,7 @@ export default class MongoDao {
   async update(filter, updateData) {
     try {
       const updatedDocument = await this.collection.updateOne(filter, updateData);
-
+      console.log(updatedDocument);
       return updatedDocument;
     } catch (err) {
       console.log("Error updateing document", err);

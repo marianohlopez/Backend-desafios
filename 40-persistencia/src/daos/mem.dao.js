@@ -16,9 +16,7 @@ export default class MemDao {
   async update(filter, updateData) {
     try {
       newCollection = this.collection.filter(item => item !== filter);
-      const updatedCollection = await newCollection.push(filter, updateData);
-
-      return updatedCollection;
+      newCollection.push(updateData);
     } catch (err) {
       console.log("Error updateing document", err);
     }

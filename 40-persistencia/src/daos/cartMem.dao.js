@@ -8,7 +8,7 @@ export class CartMemDao extends MemDao {
   }
 
   static getInstance() {
-    if (!instance) instance = new CartMongoDao();
+    if (!instance) instance = new CartMemDao();
 
     return instance;
   }
