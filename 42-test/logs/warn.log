@@ -107,3 +107,20 @@
 {"level":40,"time":1680652677407,"pid":8820,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/20190212_174303.jpg"}
 {"level":40,"time":1680652677494,"pid":8820,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/favicon.ico"}
 {"level":50,"time":1680652697593,"pid":8820,"hostname":"DESKTOP-JMIO4M8","err":{"type":"ReferenceError","message":"user is not defined","stack":"ReferenceError: user is not defined\n    at getLoginAdmin (file:///G:/Programacion/Programador%20full%20stack%20coderhouse/4-Backend/desafios/desafio-clases/40-persistencia/src/controllers/index.js:15:30)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at Layer.handle [as handle_request] (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (G:\\Programacion\\Programador full stack coderhouse\\4-Backend\\desafios\\desafio-clases\\40-persistencia\\node_modules\\express\\lib\\router\\index.js:47:12)"},"msg":"user is not defined"}
+{"level":40,"time":1680710955283,"pid":9408,"hostname":"DESKTOP-JMIO4M8","method":"POST","url":"/api/user"}
+{"level":40,"time":1680717722174,"pid":5496,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680718212979,"pid":14884,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680718424082,"pid":3340,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680718486632,"pid":14816,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680718705306,"pid":15020,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680718860511,"pid":11004,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680719416019,"pid":15160,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680720536408,"pid":12468,"hostname":"DESKTOP-JMIO4M8","method":"PUT","url":"/api/test"}
+{"level":40,"time":1680720536455,"pid":12468,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680720610169,"pid":14368,"hostname":"DESKTOP-JMIO4M8","method":"PUT","url":"/api/test"}
+{"level":40,"time":1680720610192,"pid":14368,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680720706888,"pid":16184,"hostname":"DESKTOP-JMIO4M8","method":"PUT","url":"/api/test"}
+{"level":40,"time":1680720706914,"pid":16184,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680720750968,"pid":16128,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680720905887,"pid":8776,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
+{"level":40,"time":1680721177417,"pid":2056,"hostname":"DESKTOP-JMIO4M8","method":"GET","url":"/asdasd"}
