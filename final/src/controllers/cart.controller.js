@@ -5,6 +5,7 @@ import logger from "../lib/logger.js";
 import { Product } from "../models/product.model.js";
 import { Orders } from "../models/order.model.js";
 import moment from 'moment';
+import { sendOrderMail } from "../services/nodemail.js";
 
 const time = moment().format('DD MM YYYY HH:mm:ss');
 
@@ -159,15 +160,20 @@ const finish = async (req, res, next) => {
         const { cartId } = req.params
         const cart = await cartDao.getById(cartId)
         const orders = await orderApi.getAll()
-        orderApi.save({
+        const userOrder = {
+            user: cart.username,
             products: cart.products,
             order: orders.length + 1,
             email: cart.email,
             time,
-        })
-        res.sendStatus(200);
+        }
+        orderApi.save(userOrder);
+        sendOrderMail(userOrder);
+        res.send(`Felicitaciones por su compra ${cart.username}`)
+        /* res.sendStatus(200); */
     } catch (err) {
-        logger.error({ error: err }, "Error adding product");
+        console.log(err);
+        /* logger.error({ error: err }, "Error adding product"); */
         res.sendStatus(500);
     }
 };

@@ -2,11 +2,14 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-import args from "../yargs.js";
 import { fork } from "child_process";
 import { sendUserMail } from "../services/nodemail.js";
 import logger from "../lib/logger.js";
 import generateFaker from "../services/faker.js";
+import { config } from "dotenv";
+import configParams from "../config/config.js";
+
+config();
 
 const getLoginAdmin = (req, res) => {
     try {
@@ -86,6 +89,11 @@ const getRegister = (req, res) => {
     res.sendFile(join(__dirname, "../views/signup.html"));
 };
 
+const chatUsers = (req, res) => {
+    /* const { user } = req.session.passport; */
+    res.render("chatUsers"/* , { user } */);
+};
+
 const getLoginFailiure = (req, res) => {
     res.render("login-error");
 };
@@ -103,7 +111,12 @@ const logOut = (req, res) => {
 const info = (req, res) => {
 
     res.render("info", {
-        entryArgs: JSON.stringify(args),
+        port: configParams.port,
+        host: configParams.host,
+        timeSession: configParams.timeSession,
+        mail: configParams.mail,
+        db: configParams.db,
+        dbUrl: configParams.dbUrl,
         platform: process.platform,
         versionNode: process.version,
         memory: process.memoryUsage().rss,
@@ -139,6 +152,7 @@ export const authController = {
     getRegister,
     getLoginFailiure,
     getRegisterFailiure,
+    chatUsers,
     logOut,
     info,
     getRandom,

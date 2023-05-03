@@ -5,7 +5,7 @@ const args = yargs(process.argv.slice(2))
         p: "puerto",
     })
     .default({
-        puerto: 8080,
+        puerto: 3000,
     }).argv;
 
 export default args;

@@ -70,9 +70,9 @@ if (cluster.isPrimary && params.mode.toUpperCase() === 'CLUSTER') {
             rolling: true,
             resave: false,
             saveUninitialized: false,
-            /* cookie: {
+            cookie: {
                 maxAge: 600000,
-            }, */
+            },
         })
     );
 

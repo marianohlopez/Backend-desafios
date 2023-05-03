@@ -5,8 +5,12 @@ import { cartController } from '../controllers/cart.controller.js';
 
 const router = Router()
 
+//Solo para administradores/carga de productos al inventario
+
 router.route('/admin')
     .get(authController.getLoginAdmin)
+
+//Usuarios
 
 router.route('/productos')
     .get(cartController.findCartByFilter)
@@ -17,6 +21,9 @@ router.route('/productos/:id')
 router.route('/productos/:category')
     .get(cartController.findProductsByCategory)
 
+router.route('/chat')
+    .get(authController.chatUsers)
+
 /* router.route('/api/productos-test')
     .get(authController.fakerProducts) */
 
@@ -26,8 +33,12 @@ router.route("/cart/:productId")
     .post(cartController.updateCart)
     .delete(cartController.deleteProductInCart);
 
+//Finalizar compra/envio de orden al mail del usuario
+
 router.route("/cart/finish/:cartId")
     .post(cartController.finish)
+
+//Parametros de configuracion
 
 router.get("/info", compression(), authController.info)
 
