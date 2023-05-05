@@ -5,29 +5,39 @@ import { cartController } from '../controllers/cart.controller.js';
 
 const router = Router()
 
-//Solo para administradores/carga de productos al inventario
+//Solo para administradores, chat y carga de productos al inventario
 
 router.route('/admin')
     .get(authController.getLoginAdmin)
 
-//Usuarios
+//Se listan los productos, se agregan al carrito y se finaliza la compra
 
 router.route('/productos')
     .get(cartController.findCartByFilter)
 
-router.route('/productos/:id')
+//filtra un producto por su id, tuve que hacer la ruta distinta a la de la consigna porque sino iba al mismo que la de categoria
+
+router.route('/productos/id/:id')
     .get(cartController.productDescription)
+
+//filtro por categorias de producto
 
 router.route('/productos/:category')
     .get(cartController.findProductsByCategory)
 
+//se pueden ver todos los chats
 router.route('/chat')
     .get(authController.chatUsers)
+
+//solo los chats del email indicado
+
+router.route('/chat/:email')
+    .get(authController.findChatByMail)
 
 /* router.route('/api/productos-test')
     .get(authController.fakerProducts) */
 
-//Agregar o eliminar productos del carrito por su id utilizando cookies
+//Agregar o eliminar productos del carrito por su id 
 
 router.route("/cart/:productId")
     .post(cartController.updateCart)

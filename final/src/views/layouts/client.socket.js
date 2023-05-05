@@ -3,7 +3,6 @@ const messageForm = document.getElementById("messageForm");
 const usernameInput = document.getElementById("usernameInput");
 const messageInput = document.getElementById("messageInput");
 const messagesPool = document.getElementById("messagesPool");
-const messagesPoolUsers = document.getElementById("messagesPoolUsers");
 
 const productForm = document.getElementById("productForm");
 const productInput = document.getElementById("productInput");
@@ -52,7 +51,6 @@ const renderMessage = (messagesData) => {
         return `<div> <strong style="color: blue">${messageInfo.username}</strong><span style="color: brown">[${messageInfo.time}]:</span> <em style="color: green; font-style: italic">${messageInfo.message}</em> </div>`;
     });
     messagesPool.innerHTML = html.join(" ");
-    messagesPoolUsers.innerHTML = html.join(" ");
 };
 
 const submitHandler = (event) => {

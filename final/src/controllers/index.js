@@ -8,8 +8,12 @@ import logger from "../lib/logger.js";
 import generateFaker from "../services/faker.js";
 import { config } from "dotenv";
 import configParams from "../config/config.js";
+import ContenedorMongo from "../classes/ContenedorMongo.js";
+import { Chat } from "../models/chat.model.js";
 
 config();
+
+const chatApi = new ContenedorMongo(Chat);
 
 const getLoginAdmin = (req, res) => {
     try {
@@ -90,8 +94,24 @@ const getRegister = (req, res) => {
 };
 
 const chatUsers = (req, res) => {
-    /* const { user } = req.session.passport; */
-    res.render("chatUsers"/* , { user } */);
+    const { user } = req.session.passport;
+    console.log(user);
+    if (!user) {
+        return res.send("Usuario no encontrado");
+    }
+    res.render("chat-users");
+};
+
+const findChatByMail = async (req, res) => {
+    const { email } = req.params;
+    const { user } = req.session.passport;
+    if (!user) {
+        return res.send("Usuario no encontrado");
+    }
+    const chats = await chatApi.getAll();
+    const userChat = chats.filter(chat => chat.username === email)
+
+    res.render("find-chat", { userChat });
 };
 
 const getLoginFailiure = (req, res) => {
@@ -153,6 +173,7 @@ export const authController = {
     getLoginFailiure,
     getRegisterFailiure,
     chatUsers,
+    findChatByMail,
     logOut,
     info,
     getRandom,

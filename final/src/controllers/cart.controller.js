@@ -170,10 +170,8 @@ const finish = async (req, res, next) => {
         orderApi.save(userOrder);
         sendOrderMail(userOrder);
         res.send(`Felicitaciones por su compra ${cart.username}`)
-        /* res.sendStatus(200); */
     } catch (err) {
-        console.log(err);
-        /* logger.error({ error: err }, "Error adding product"); */
+        logger.error({ error: err }, "Error adding product");
         res.sendStatus(500);
     }
 };
